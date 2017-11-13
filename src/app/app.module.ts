@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { FlightSearchComponent } from './flight-search/flight-search.component';
+import { FlightService } from './flight-search/flight.service';
 
 @NgModule({
   imports: [
@@ -22,6 +23,8 @@ import { FlightSearchComponent } from './flight-search/flight-search.component';
     FlightSearchComponent
   ],
   providers: [
+    // { provide: FlightService, useClass: FlightService}
+    // FlightService
   ],
   bootstrap: [AppComponent]
 })
