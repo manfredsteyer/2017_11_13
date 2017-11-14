@@ -7,13 +7,19 @@ import { FlightService } from './flight.service';
   selector: 'flight-search',
   templateUrl: './flight-search.component.html',
   styleUrls: ['./flight-search.component.css'],
-  providers: [FlightService]
+  // providers: [FlightService]
 })
 export class FlightSearchComponent implements OnInit {
 
   from: string;
   to: string;
-  flights: Array<Flight> = [];
+  // flights: Array<Flight> = [];
+
+  get flights() {
+    return this.flightService.flights;
+  }
+
+
   selectedFlight: Flight;
 
   basket: object = {
@@ -36,11 +42,7 @@ export class FlightSearchComponent implements OnInit {
     if (!this.from || !this.to) return;
 
     this.flightService
-        .find(this.from, this.to)
-        .subscribe(
-          flights => { this.flights = flights },
-          err => { console.error('Error loading flights', err); }
-        );
+        .load(this.from, this.to);
 
     /*
     this.flights.push({

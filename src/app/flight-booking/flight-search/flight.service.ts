@@ -8,7 +8,17 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 export class FlightService {
 
   constructor(private http: HttpClient) {
+  }
 
+  flights: Flight[] = [];
+
+  load(from: string, to: string): void {
+    this.find(from, to).subscribe(
+      flights => {
+        this.flights = flights;
+      },
+      err => console.error('Error loading flights', err)
+    );
   }
 
   find(from: string, to: string): Observable<Flight[]> {

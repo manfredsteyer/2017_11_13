@@ -24,7 +24,7 @@ import { FlightEditComponent } from './flight-edit/flight-edit.component';
     FlightEditComponent
   ],
   providers: [
-    // FlightService
+    FlightService
   ],
   exports: [
     FlightSearchComponent
