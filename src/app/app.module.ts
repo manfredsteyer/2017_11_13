@@ -19,7 +19,7 @@ import { FlightBookingModule } from './flight-booking/flight-booking.module';
     FlightBookingModule
   ],
   declarations: [
-    AppComponent, 
+    AppComponent,
     SidebarComponent,
     NavbarComponent
   ],
